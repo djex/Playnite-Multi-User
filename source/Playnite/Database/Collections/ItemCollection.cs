@@ -118,7 +118,7 @@ namespace Playnite.Database
             var dbPath = path + ".db";
             void openDb()
             {
-                liteDb = new LiteDatabase($"Filename={dbPath};Mode=Exclusive;Cache Size=0", mapper);
+                liteDb = new LiteDatabase($"Filename={dbPath};Mode=Shared;Cache Size=0", mapper);
                 liteCollection = liteDb.GetCollection<TItem>();
                 liteCollection.EnsureIndex(a => a.Id, true);
             }
@@ -175,7 +175,7 @@ namespace Playnite.Database
                     }
 
                     File.Delete(dbPath);
-                    using (var db = new LiteDatabase($"Filename={dbPath};Mode=Exclusive;Cache Size=0"))
+                    using (var db = new LiteDatabase($"Filename={dbPath};Mode=Shared;Cache Size=0"))
                     {
                         foreach (var collName in oldData.Keys)
                         {
