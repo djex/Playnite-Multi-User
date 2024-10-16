@@ -1,3 +1,6 @@
+This is a small patch to allow multi user access to the LiteDB database. This will allow opening Playnite on multiple computers on a network share. 
+
+**Warning:** Any changes made while multiple instances are open will not be reflected on the other clients until restarted. It is recommended if changes need to be made (adding games, etc) only make changes while one instance of Playnite is open at a time.
 
 # <img src="https://playnite.link/applogo.png" width="32">  Playnite [![Crowdin](https://badges.crowdin.net/playnite/localized.svg)](https://crowdin.com/project/playnite)
 An open source video game library manager and launcher with support for 3rd party libraries like Steam, Epic, GOG, EA App, Battle.net and [others](https://playnite.link/addons.html). Includes game emulation support, providing one unified interface for your games.
